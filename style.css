@@ -1,13 +1,18 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500&display=swap');
+
 :root{
     --color-1: #03045e;
     --color-2: #0077b6;
     --color-3: #00b4d8;
     --color-4: #90e0ef;
     --color-5: #caf0f8;
+    --font-montserrat:'Montserrat', sans-serif;
+    --font-fraunces: 'Fraunces', serif;
 }
 html{
     height: 100%;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: var(--font-montserrat)
 }
 
 body{
@@ -78,7 +83,7 @@ main{
     text-align: center;
 }
 
-.cell:hover, button[type="submit"]:hover{
+button[type="submit"]:hover{
     scale: 1.02;
     cursor: pointer;
 }
@@ -106,10 +111,12 @@ button[type="submit"]{
 .gameBoardContainer{
     display: flex;
     flex-wrap: wrap;
-    aspect-ratio: 1 / 1;
-    height: calc(60vw + 20px);
-    width: calc(60vw + 20px);
-    gap: 10px;
+    height: 60vw;
+    width: 60vw;
+    box-shadow: rgb(50 50 93 / 25%) 0px 16px 27px -5px, rgb(0 0 0 / 30%) 10px 10px;
+    border-top: 2px solid var(--color-1);
+    border-right: 4px solid var(--color-1);
+    border-bottom: 4px solid var(--color-1);
 }
 
 .cell{
@@ -118,17 +125,38 @@ button[type="submit"]{
     height: 20vw;
     width: 20vw;
     background-color: var(--color-5);
-    font-size: 17vw;
+    font-size: 16vw;
+    color: var(--color-3);
+    border: 1px solid var(--color-1)
 }
+
+.cell[data-index="0"], .cell[data-index="3"], .cell[data-index="6"]{
+    border-left: 4px solid var(--color-1)
+}
+
+.cell[data-index="0"], .cell[data-index="1"], .cell[data-index="2"]{
+    border-top: 2px solid var(--color-1)
+}
+
+.cell[data-index="2"], .cell[data-index="5"], .cell[data-index="8"]{
+    border-right: 2px solid var(--color-1)
+}
+
+.cell[data-index="6"], .cell[data-index="7"], .cell[data-index="8"]{
+    border-bottom: 2px solid var(--color-1)
+}
+
+
+
 
 @media(min-width: 600px){
     .gameBoardContainer{
-        height: 425px;
-        width: 425px;
+        height: 420px;
+        width: 420px;
     }
     .cell{
-        height: 135px;
-        width: 135px;
-        font-size: 120px
+        height: 140px;
+        width: 140px;
+        font-size: 110px
     }
 }

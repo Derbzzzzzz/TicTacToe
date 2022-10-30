@@ -13,11 +13,21 @@
         <div class="blur">
             <div class="endCard">
                 <div class="text">
-                    <div class="congrats">Congrats</div>
+                    <div class="congrats">Hello!</div>
                     <br>
-                    <div class="victory">You are victorious!</div>
+                    <div class="victory">Input your name and hit Play to begin!</div>
                 </div>
-                <div class="playButton">Play</div>
+                <form id="form" onsubmit="return false">
+                    <div class="flex">
+                        <label for="name1">Player 1</label>
+                        <input type="text" name="name1" id="name1" placeholder="" required>
+                    </div>
+                    <div class="flex">
+                        <label for="name2">Player 2</label>
+                        <input type="text" name="name2" id="name2" placeholder="" required>
+                    </div>
+                    <button type="submit">Play</button>
+                </form>
             </div>
         </div>
         <div class="gameBoardContainer">

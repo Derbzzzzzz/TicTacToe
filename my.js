@@ -63,7 +63,7 @@ const GameBoard = (() => {
 
     const displayWinner = (player) => {
         congrats.textContent = `Congratulations ${player.name}!`
-        victory.textContent = "You are victorius!"
+        victory.textContent = "You are victorious!"
         blur.style.display = "flex"
     }
 
@@ -116,10 +116,14 @@ cells.forEach(cell => {
     } )
 });
 
-playButton = document.querySelector(".playButton")
+const form = document.querySelector('#form')
+name1 = document.querySelector("#name1")
+name2 = document.querySelector("#name2")
 
-playButton.addEventListener('click', function(){
+form.addEventListener('submit', function(){
     GameBoard.reset()
+    player1.name = name1.value
+    player2.name = name2.value
     blur.style.display = "none"
     cells.forEach(cell => {
         cell.textContent = "";

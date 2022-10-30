@@ -1,0 +1,108 @@
+:root{
+    --color-1: #03045e;
+    --color-2: #0077b6;
+    --color-3: #00b4d8;
+    --color-4: #90e0ef;
+    --color-5: #caf0f8;
+}
+html{
+    height: 100%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body{
+    margin: 0px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+header{
+    height: 100px;
+    background-image: linear-gradient(to top, var(--color-1), var(--color-2));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    color: var(--color-3);
+}
+
+main{
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    align-content: center;
+    background-color: var(--color-4);
+    padding: 30px;
+}
+
+.blur{
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(3px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    justify-content: center;
+    align-items: center;
+    display: none
+}
+
+.endCard{
+    height: 500px;
+    width: 300px;
+    padding: 20px;
+    padding-top: 40px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    font-size: 2rem;
+
+    background-color: var(--color-5);
+    border-left: 2px solid var(--color-1);
+    border-top: 2px solid var(--color-1);
+    border-right: 4px solid var(--color-1);
+    border-bottom: 4px solid var(--color-1);
+    box-shadow: rgb(50 50 93 / 25%) 0px 13px 27px -5px, rgb(0 0 0 / 30%) 5px 8px
+}
+
+.text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.endCard:hover, .playButton:hover{
+    scale: 1.1;
+    cursor: pointer;
+}
+
+.playButton{
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--color-4);
+}
+
+
+.gameBoardContainer{
+    display: flex;
+    flex-wrap: wrap;
+    height: 320px;
+    width: 320px;
+    gap: 10px
+}
+
+.cell{
+    text-align: center;
+    box-sizing: border-box;
+    height: 100px;
+    width: 100px;
+    background-color: var(--color-5);
+    font-size: 90px;
+}
